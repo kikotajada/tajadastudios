@@ -83,7 +83,7 @@ nav a[aria-current="page"]{color:var(--red-text)}
 .head-row p{color:var(--muted)}
 .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:22px}
 .card{background:var(--surface); border:1.5px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column}
-.cover{display:block; width:100%; max-width:100%; aspect-ratio:2/1; object-fit:cover; background:#F7F5F0; border-bottom:1.5px solid var(--line)}
+.cover{display:block; width:100%; max-width:100%; aspect-ratio:4/3; object-fit:cover; background:#F7F5F0; border-bottom:1.5px solid var(--line)}
 .cover-text{aspect-ratio:2/1; max-width:100%; display:flex; align-items:center; justify-content:center; gap:14px; background:#1C1917; color:#F4EFE6; font-family:var(--display); font-size:34px; font-weight:600; letter-spacing:-0.02em}
 .cover-text .cross{width:34px; height:34px; border-radius:4px; background:#C8102E; position:relative; flex:none}
 .cover-text .cross::before,.cover-text .cross::after{content:""; position:absolute; background:#FFFFFF; left:50%; top:50%; transform:translate(-50%,-50%)}
@@ -109,8 +109,8 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
 
 /* about */
 .about-hero .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:36px 56px; padding-block:80px}
-.portrait{flex:0 1 300px; max-width:100%; margin:0; position:relative}
-.portrait img{display:block; width:100%; max-width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 30%; border-radius:16px; background:var(--cover)}
+.portrait{flex:0 1 380px; max-width:100%; margin:0; position:relative}
+.portrait img{display:block; width:100%; max-width:100%; aspect-ratio:4/3; object-fit:cover; object-position:50% 28%; border-radius:16px; background:var(--cover)}
 .portrait::after{content:""; position:absolute; left:-10px; bottom:-10px; width:64px; height:64px; border-radius:50%; background:
   repeating-linear-gradient(45deg, transparent 0 8px, color-mix(in srgb, var(--check) 85%, transparent) 8px 11px),
   repeating-linear-gradient(-45deg, transparent 0 8px, color-mix(in srgb, var(--check) 85%, transparent) 8px 11px), var(--red); border:4px solid var(--bg)}
@@ -131,20 +131,15 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <clipPath id="wedge"><path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z"></path></clipPath>
+    <clipPath id="disc"><circle cx="100" cy="112" r="80"></circle></clipPath>
+    <pattern id="chk" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="22" height="22" fill="#C8102E"></rect>
+      <rect x="0" y="8" width="22" height="5" fill="#1C1917"></rect>
+      <rect x="8" y="0" width="5" height="22" fill="#1C1917"></rect>
+    </pattern>
     <symbol id="mark" viewBox="0 0 200 200">
-      <g transform="translate(-4,4)">
-        <path d="M100,100 L180,100 A80,80 0 1,1 100,20 Z" fill="#C8102E"></path>
-        <g transform="translate(8,-8)">
-          <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#C8102E"></path>
-          <g clip-path="url(#wedge)" stroke="#1C1917" stroke-width="6">
-            <line x1="-180" y1="-200" x2="320" y2="300"></line><line x1="-150" y1="-200" x2="350" y2="300"></line>
-            <line x1="-120" y1="-200" x2="380" y2="300"></line><line x1="-90" y1="-200" x2="410" y2="300"></line>
-            <line x1="-160" y1="300" x2="440" y2="-300"></line><line x1="-125" y1="300" x2="475" y2="-300"></line>
-            <line x1="-90" y1="300" x2="510" y2="-300"></line><line x1="-55" y1="300" x2="545" y2="-300"></line>
-          </g>
-        </g>
-      </g>
+      <g clip-path="url(#disc)"><path d="M0,106 L52,74 L76,94 L104,54 L132,90 L152,74 L200,104 L200,200 L0,200 Z" fill="#C8102E"></path></g>
+      <g transform="translate(0,-12)"><g clip-path="url(#disc)"><path d="M0,106 L52,74 L76,94 L104,54 L132,90 L152,74 L200,104 L200,0 L0,0 Z" fill="url(#chk)"></path></g></g>
     </symbol>
   </defs>
 </svg>
@@ -180,7 +175,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
           <a class="btn btn-line" href="#about" data-i18n="cta2">Who's behind it</a>
         </div>
       </div>
-      <div class="hero-mark"><svg viewBox="0 0 200 200" role="img" aria-label="Tajada Studios logo: a red circle with a checked slice lifted out"><use href="#mark"></use></svg></div>
+      <div class="hero-mark"><svg viewBox="0 0 200 200" role="img" aria-label="Tajada Studios logo: a red circle cut along a mountain ridge, with a checked slice of sky lifted off"><use href="#mark"></use></svg></div>
     </div>
   </section>
 
@@ -192,7 +187,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
       </div>
       <div class="grid">
         <article class="card">
-          <img class="cover" src="hdp-cover.jpg" alt="Historias de Pasta banner: Dani holding a euro coin" width="960" height="480" loading="lazy">
+          <img class="cover" src="hdp-cover.jpg" alt="Historias de Pasta logo: Dani holding a euro coin" width="960" height="720" loading="lazy">
           <div class="in">
             <span class="tag" data-i18n="live">Live</span>
             <h3>Historias de Pasta</h3>
@@ -207,7 +202,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
           </div>
         </article>
         <article class="card">
-          <img class="cover" src="ms-cover.jpg" alt="Money Stories banner: Leo in a red jacket" width="960" height="480" loading="lazy">
+          <img class="cover" src="ms-cover.jpg" alt="Money Stories: Leo holding a Swiss franc coin" width="960" height="720" loading="lazy">
           <div class="in">
             <span class="tag soon" data-i18n="soon">Coming soon</span>
             <h3>Money Stories</h3>
@@ -216,7 +211,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
           </div>
         </article>
         <article class="card">
-          <img class="cover" src="ds-cover.jpg" alt="Desde Suiza logo" width="960" height="480" loading="lazy">
+          <img class="cover" src="ds-cover.jpg" alt="Desde Suiza logo" width="960" height="720" loading="lazy">
           <div class="in">
             <span class="tag soon" data-i18n="soon">Coming soon</span>
             <h3>Desde Suiza</h3>
