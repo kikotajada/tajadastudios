@@ -83,7 +83,9 @@ nav a[aria-current="page"]{color:var(--red-text)}
 .head-row p{color:var(--muted)}
 .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:22px}
 .card{background:var(--surface); border:1.5px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column}
-.cover{display:block; width:100%; max-width:100%; aspect-ratio:1/1; object-fit:cover; background:#F7F5F0; border-bottom:1.5px solid var(--line)}
+.sq{position:relative; display:block; width:100%; height:0; padding-top:100%; overflow:hidden; flex:none}
+.sq img{position:absolute; top:0; left:0; width:100%; height:100%; max-width:none; object-fit:cover; display:block}
+.card .sq{border-bottom:1.5px solid var(--line); background:#F7F5F0}
 .cover-text{aspect-ratio:2/1; max-width:100%; display:flex; align-items:center; justify-content:center; gap:14px; background:#1C1917; color:#F4EFE6; font-family:var(--display); font-size:34px; font-weight:600; letter-spacing:-0.02em}
 .cover-text .cross{width:34px; height:34px; border-radius:4px; background:#C8102E; position:relative; flex:none}
 .cover-text .cross::before,.cover-text .cross::after{content:""; position:absolute; background:#FFFFFF; left:50%; top:50%; transform:translate(-50%,-50%)}
@@ -110,7 +112,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
 /* about */
 .about-hero .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:36px 56px; padding-block:80px}
 .portrait{flex:0 1 340px; max-width:100%; margin:0; position:relative}
-.portrait img{display:block; width:100%; max-width:100%; aspect-ratio:1/1; object-fit:cover; object-position:50% 50%; border-radius:16px; background:var(--cover)}
+.portrait .sq{border-radius:16px; background:var(--cover)}
 .portrait::after{content:""; position:absolute; left:-10px; bottom:-10px; width:64px; height:64px; border-radius:50%; background:
   repeating-linear-gradient(45deg, transparent 0 8px, color-mix(in srgb, var(--check) 85%, transparent) 8px 11px),
   repeating-linear-gradient(-45deg, transparent 0 8px, color-mix(in srgb, var(--check) 85%, transparent) 8px 11px), var(--red); border:4px solid var(--bg)}
@@ -187,7 +189,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
       </div>
       <div class="grid">
         <article class="card">
-          <img class="cover" src="hdp-cover.jpg" alt="Historias de Pasta logo: Dani holding a euro coin" width="720" height="720" loading="lazy">
+          <div class="sq"><img src="hdp-cover.jpg" alt="Historias de Pasta logo: Dani holding a euro coin" width="720" height="720" loading="lazy"></div>
           <div class="in">
             <span class="tag" data-i18n="live">Live</span>
             <h3>Historias de Pasta</h3>
@@ -202,7 +204,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
           </div>
         </article>
         <article class="card">
-          <img class="cover" src="ms-cover.jpg" alt="Money Stories: Leo holding a Swiss franc coin" width="720" height="720" loading="lazy">
+          <div class="sq"><img src="ms-cover.jpg" alt="Money Stories: Leo holding a Swiss franc coin" width="720" height="720" loading="lazy"></div>
           <div class="in">
             <span class="tag soon" data-i18n="soon">Coming soon</span>
             <h3>Money Stories</h3>
@@ -211,7 +213,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
           </div>
         </article>
         <article class="card">
-          <img class="cover" src="ds-cover.jpg" alt="Desde Suiza logo" width="720" height="720" loading="lazy">
+          <div class="sq"><img src="ds-cover.jpg" alt="Desde Suiza logo" width="720" height="720" loading="lazy"></div>
           <div class="in">
             <span class="tag soon" data-i18n="soon">Coming soon</span>
             <h3>Desde Suiza</h3>
@@ -227,7 +229,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
 <main id="about" hidden>
   <section class="about-hero">
     <div class="wrap">
-      <figure class="portrait"><img src="kiko.jpg" alt="Kiko Tajada" width="720" height="720"></figure>
+      <figure class="portrait"><div class="sq"><img src="kiko.jpg" alt="Kiko Tajada" width="720" height="720"></div></figure>
       <div class="hero-text">
         <span class="eyebrow" data-i18n="aboutEyebrow">About</span>
         <h1 data-i18n="aboutH1">Hi, I'm Kiko.</h1>
