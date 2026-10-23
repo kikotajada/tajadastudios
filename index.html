@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tajada Studios</title>
+<meta name="description" content="Tajada Studios: media projects from Zaragoza, made in English and Spanish. Home of Historias de Pasta.">
+<meta property="og:title" content="Tajada Studios">
+<meta property="og:description" content="Stories with a slice of home. Home of Historias de Pasta.">
+<meta property="og:image" content="https://tajadastudios.com/kiko.jpg">
+<meta property="og:url" content="https://tajadastudios.com/">
+<meta name="theme-color" content="#F4EFE6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;600;700&display=swap">
+<style>
+/* Layout: full-width bands (paper, white, ink) with a 1120px inner column; one cachirulo strip frames top and bottom */
+:root{
+  --bg:#F4EFE6; --surface:#FFFFFF; --fg:#1C1917; --muted:#6B6358; --line:#DDD5C8; --cover:#EAE2D3;
+  --red:#C8102E; --red-text:#C8102E; --red-hover:#9B1B22; --saffron:#E3A72F;
+  --band:#1C1917; --band-fg:#F4EFE6; --band-muted:#C9C1B5; --check:#1C1917;
+  --display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --body:'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#1A1714; --surface:#24201C; --fg:#F1EBE1; --muted:#B3AA9D; --line:#3A342E; --cover:#2E2924;
+  --red-text:#FF5A6A; --red-hover:#FF8A95; --band:#0F0D0B; --band-fg:#F1EBE1; --band-muted:#B3AA9D; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#1A1714; --surface:#24201C; --fg:#F1EBE1; --muted:#B3AA9D; --line:#3A342E; --cover:#2E2924;
+  --red-text:#FF5A6A; --red-hover:#FF8A95; --band:#0F0D0B; --band-fg:#F1EBE1; --band-muted:#B3AA9D; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--fg); font-family:var(--body); font-size:17px; line-height:1.6}
+a{color:var(--red-text)} a:hover{color:var(--red-hover)}
+:focus-visible{outline:3px solid var(--saffron); outline-offset:3px; border-radius:4px}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.strip{height:10px; background:
+  repeating-linear-gradient(45deg, transparent 0 8px, color-mix(in srgb, var(--check) 85%, transparent) 8px 11px),
+  repeating-linear-gradient(-45deg, transparent 0 8px, color-mix(in srgb, var(--check) 85%, transparent) 8px 11px),
+  var(--red)}
+h1,h2,h3{font-family:var(--display); font-weight:600; letter-spacing:-0.02em; text-wrap:balance; margin:0}
+p{margin:0}
+.eyebrow{font-size:13px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted)}
+
+/* header */
+.top{border-bottom:1.5px solid var(--line)}
+.top .wrap{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px 24px; padding-block:16px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--fg)}
+.brand b{font-family:var(--display); font-size:26px; font-weight:600; letter-spacing:-0.02em; line-height:1}
+.brand i{font-family:var(--display); font-size:17px; color:var(--red-text); margin-left:-4px}
+nav{display:flex; flex-wrap:wrap; align-items:center; gap:6px 22px}
+nav a{color:var(--fg); text-decoration:none; font-size:15px; font-weight:600; padding:10px 0}
+nav a[aria-current="page"]{color:var(--red-text)}
+.lang{display:flex; border:1.5px solid var(--fg); border-radius:999px; overflow:hidden}
+.lang button{background:transparent; color:var(--fg); border:0; font:700 13px var(--body); min-height:40px; min-width:46px; cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--fg); color:var(--bg)}
+
+/* hero */
+.hero .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:40px 56px; padding-block:84px 92px}
+.hero-text{flex:1 1 440px; min-width:0; display:flex; flex-direction:column; gap:22px}
+.hero h1{font-size:clamp(42px, 6.4vw, 76px); line-height:1.02}
+.hero p{font-size:19px; max-width:34rem}
+.hero-mark{flex:0 1 320px; display:flex; justify-content:center}
+.hero-mark svg{width:100%; max-width:300px; height:auto}
+.ctas{display:flex; flex-wrap:wrap; gap:12px; padding-top:4px}
+.btn{display:inline-flex; align-items:center; min-height:46px; padding:0 22px; border-radius:999px; font-weight:700; font-size:15px; text-decoration:none}
+.btn-red{background:var(--red); color:#FFFFFF} .btn-red:hover{background:#9B1B22; color:#FFFFFF}
+.btn-line{border:1.5px solid var(--fg); color:var(--fg)} .btn-line:hover{color:var(--fg); background:var(--surface)}
+
+/* sections */
+.white{background:var(--surface); border-block:1.5px solid var(--line)}
+.split .wrap{display:flex; flex-wrap:wrap; gap:28px 56px; padding-block:80px}
+.split h2{flex:1 1 240px; font-size:40px; line-height:1.1}
+.split .body{flex:2 1 480px; min-width:0; display:flex; flex-direction:column; gap:26px}
+.split .body p{font-size:20px; max-width:38rem}
+.chips{display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0; margin:0}
+.chips li{background:var(--bg); border:1.5px solid var(--line); border-radius:999px; padding:7px 16px; font-size:14px; font-weight:600}
+
+.projects .wrap{display:flex; flex-direction:column; gap:34px; padding-block:88px}
+.head-row{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:10px}
+.head-row h2{font-size:40px}
+.head-row p{color:var(--muted)}
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:22px}
+.card{background:var(--surface); border:1.5px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column}
+.cover{aspect-ratio:16/10; max-width:100%; display:flex; align-items:flex-end; padding:18px; background:var(--cover); color:var(--muted); font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase}
+.cover.live{background:var(--red); color:#FFFFFF; font-family:var(--display); font-size:30px; font-weight:600; letter-spacing:-0.02em; text-transform:none; line-height:1.05}
+.card .in{padding:20px 22px 24px; display:flex; flex-direction:column; gap:8px}
+.card h3{font-size:24px}
+.card p{font-size:15px; color:var(--muted)}
+.card.soon{background:transparent; border-style:dashed}
+.tag{align-self:flex-start; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 10px; border-radius:999px; background:var(--saffron); color:#1C1917}
+
+.contact{background:var(--band); color:var(--band-fg)}
+.contact .wrap{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:28px; padding-block:88px}
+.contact .txt{flex:1 1 420px; display:flex; flex-direction:column; gap:12px}
+.contact h2{font-size:clamp(36px, 5vw, 56px); line-height:1.05}
+.contact p{color:var(--band-muted); font-size:18px}
+.mail{display:flex; flex-wrap:wrap; align-items:center; gap:12px}
+.mail code{font:700 22px var(--body); color:var(--saffron); user-select:all}
+.mail button{background:transparent; color:var(--band-fg); border:1.5px solid var(--band-fg); border-radius:999px; font:700 14px var(--body); min-height:42px; padding:0 18px; cursor:pointer}
+.mail output{font-size:14px; color:var(--band-muted); min-width:5rem}
+footer{background:var(--band); color:var(--band-muted); border-top:1px solid color-mix(in srgb, var(--band-fg) 18%, transparent)}
+footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; padding-block:22px; font-size:14px}
+
+/* about */
+.about-hero .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:36px 56px; padding-block:80px}
+.portrait{flex:0 1 300px; max-width:100%; margin:0; position:relative}
+.portrait img{display:block; width:100%; max-width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 30%; border-radius:16px; background:var(--cover)}
+.portrait::after{content:""; position:absolute; left:-10px; bottom:-10px; width:64px; height:64px; border-radius:50%; background:
+  repeating-linear-gradient(45deg, transparent 0 8px, color-mix(in srgb, var(--check) 85%, transparent) 8px 11px),
+  repeating-linear-gradient(-45deg, transparent 0 8px, color-mix(in srgb, var(--check) 85%, transparent) 8px 11px), var(--red); border:4px solid var(--bg)}
+.links{display:flex; flex-wrap:wrap; gap:8px 18px; list-style:none; padding:0; margin:0; font-size:15px; font-weight:700}
+.links a{text-decoration:none; display:inline-flex; min-height:40px; align-items:center}
+.links a:hover{text-decoration:underline}
+.about-hero .hero-text h1{font-size:clamp(40px, 6vw, 68px); line-height:1.04}
+.route{font-variant-numeric:tabular-nums; font-size:14px; color:var(--muted); display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center}
+.route span{font-weight:700; color:var(--fg)}
+.story .wrap{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:22px; padding-block:72px}
+.story article{display:flex; flex-direction:column; gap:10px; padding-top:18px; border-top:3px solid var(--red)}
+.story h3{font-size:26px}
+.story p{color:var(--muted)}
+@media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="wedge"><path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z"></path></clipPath>
+    <symbol id="mark" viewBox="0 0 200 200">
+      <g transform="translate(-4,4)">
+        <path d="M100,100 L180,100 A80,80 0 1,1 100,20 Z" fill="#C8102E"></path>
+        <g transform="translate(8,-8)">
+          <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#C8102E"></path>
+          <g clip-path="url(#wedge)" stroke="#1C1917" stroke-width="6">
+            <line x1="-180" y1="-200" x2="320" y2="300"></line><line x1="-150" y1="-200" x2="350" y2="300"></line>
+            <line x1="-120" y1="-200" x2="380" y2="300"></line><line x1="-90" y1="-200" x2="410" y2="300"></line>
+            <line x1="-160" y1="300" x2="440" y2="-300"></line><line x1="-125" y1="300" x2="475" y2="-300"></line>
+            <line x1="-90" y1="300" x2="510" y2="-300"></line><line x1="-55" y1="300" x2="545" y2="-300"></line>
+          </g>
+        </g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="strip" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Tajada Studios, home">
+      <svg width="42" height="42" viewBox="0 0 200 200" aria-hidden="true"><use href="#mark"></use></svg>
+      <b>Tajada</b><i>studios</i>
+    </a>
+    <nav aria-label="Main">
+      <a href="#studio" data-i18n="navStudio">Studio</a>
+      <a href="#projects" data-i18n="navProjects">Projects</a>
+      <a href="#about" data-i18n="navAbout" data-view-link="about">About</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="btn-en" aria-pressed="true">EN</button>
+        <button type="button" id="btn-es" aria-pressed="false">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow" data-i18n="eyebrow">Media studio · Roots in Zaragoza</span>
+        <h1 data-i18n="h1">Stories with a slice of home.</h1>
+        <p data-i18n="sub">Tajada Studios is the home for our media projects: channels, videos and stories in English and Spanish.</p>
+        <div class="ctas">
+          <a class="btn btn-red" href="#projects" data-i18n="cta1">See the projects</a>
+          <a class="btn btn-line" href="#about" data-i18n="cta2">Who's behind it</a>
+        </div>
+      </div>
+      <div class="hero-mark"><svg viewBox="0 0 200 200" role="img" aria-label="Tajada Studios logo: a red circle with a checked slice lifted out"><use href="#mark"></use></svg></div>
+    </div>
+  </section>
+
+  <section class="white split" id="studio">
+    <div class="wrap">
+      <h2 data-i18n="studioTitle">The studio</h2>
+      <div class="body">
+        <p data-i18n="studioBody">A tajada is a slice, a generous piece of something good. That is what we try to make: stories worth taking a piece of, with roots in Zaragoza and Aragón.</p>
+        <ul class="chips">
+          <li data-i18n="chip1">English &amp; Spanish</li>
+          <li data-i18n="chip2">Explainers &amp; stories</li>
+          <li data-i18n="chip3">Roots in Zaragoza</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="head-row">
+        <h2 data-i18n="projectsTitle">Projects</h2>
+        <p data-i18n="projectsSub">Everything we make lives here.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="cover live">Historias de Pasta</div>
+          <div class="in">
+            <span class="tag" data-i18n="live">Live</span>
+            <h3>Historias de Pasta</h3>
+            <p data-i18n="hdpDesc">Personal finance for Spain, told as stories: payslips, mortgages, taxes and compound interest, with real numbers. New video every Sunday.</p>
+            <ul class="links" aria-label="Historias de Pasta links">
+              <li><a href="https://historiasdepasta.es/" data-i18n="visit">Website →</a></li>
+              <li><a href="https://www.youtube.com/@historias_pasta">YouTube</a></li>
+              <li><a href="https://www.instagram.com/historias_pasta/">Instagram</a></li>
+              <li><a href="https://www.tiktok.com/@historias.pasta">TikTok</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="card soon">
+          <div class="cover" data-i18n="soonCover">Coming soon</div>
+          <div class="in">
+            <h3 data-i18n="soonTitle">Next project</h3>
+            <p data-i18n="soonDesc">In the works. More slices on the way.</p>
+          </div>
+        </article>
+        <article class="card soon">
+          <div class="cover" data-i18n="soonCover">Coming soon</div>
+          <div class="in">
+            <h3 data-i18n="soonTitle">Next project</h3>
+            <p data-i18n="soonDesc">In the works. More slices on the way.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="about" hidden>
+  <section class="about-hero">
+    <div class="wrap">
+      <figure class="portrait"><img src="kiko.jpg" alt="Kiko Tajada" width="720" height="720"></figure>
+      <div class="hero-text">
+        <span class="eyebrow" data-i18n="aboutEyebrow">About</span>
+        <h1 data-i18n="aboutH1">Hi, I'm Kiko.</h1>
+        <p data-i18n="aboutIntro">Industrial engineer from Zaragoza, living in Zurich. By day I work on the SAP systems that plan adidas' global product supply. On the side I build Tajada Studios, starting with Historias de Pasta.</p>
+        <div class="route"><span>Zaragoza</span> 41.65° N <span aria-hidden="true">→</span> <span>Madrid</span> 40.42° N <span aria-hidden="true">→</span> <span>Zürich</span> 47.38° N</div>
+        <ul class="links" aria-label="Kiko elsewhere">
+          <li><a href="https://kikotajada.com/">kikotajada.com</a></li>
+          <li><a href="https://www.linkedin.com/in/kikotajada/">LinkedIn</a></li>
+          <li><a href="https://x.com/kikotajada">X</a></li>
+          <li><a href="https://github.com/kikotajada">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="white story">
+    <div class="wrap">
+      <article>
+        <h3 data-i18n="s1Title">Where it starts</h3>
+        <p data-i18n="s1Body">Zaragoza first, then Madrid for an M.Sc. in Industrial Engineering at the Universidad Politécnica. Maths, statistics and systems: a way of thinking I still use every day.</p>
+      </article>
+      <article>
+        <h3 data-i18n="s2Title">What I do</h3>
+        <p data-i18n="s2Body">From internships at Dematic and Biogen to adidas, where I was Chief of Staff for global product supply and logistics. Today I'm Senior Manager for Digital Process Management, bridging SAP planning tools and the people who use them.</p>
+      </article>
+      <article>
+        <h3 data-i18n="s3Title">Why Tajada</h3>
+        <p data-i18n="s3Body">Money is easier to understand as a story, with real numbers. That idea became Historias de Pasta. I'm also a CFA® Level III candidate and a marathon runner. Tajada Studios is where these projects live.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="txt">
+      <h2 data-i18n="contactTitle">Let's make something.</h2>
+      <p data-i18n="contactBody">Collaborations, press, or just hello.</p>
+    </div>
+    <div class="mail">
+      <code id="email">kiko@tajadastudios.com</code>
+      <button type="button" id="copy-email" data-i18n="copy">Copy</button>
+      <output id="copy-status" aria-live="polite"></output>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tajada Studios</span>
+    <span data-i18n="footer">Made with a slice of Aragón</span>
+  </div>
+</footer>
+<div class="strip" aria-hidden="true"></div>
+
+<script>
+const T = {
+  en: {
+    navStudio:'Studio', navProjects:'Projects', navAbout:'About', navContact:'Contact',
+    eyebrow:'Media studio · Roots in Zaragoza', h1:'Stories with a slice of home.',
+    sub:'Tajada Studios is the home for our media projects: channels, videos and stories in English and Spanish.',
+    cta1:'See the projects', cta2:"Who's behind it",
+    studioTitle:'The studio',
+    studioBody:'A tajada is a slice, a generous piece of something good. That is what we try to make: stories worth taking a piece of, with roots in Zaragoza and Aragón.',
+    chip1:'English & Spanish', chip2:'Explainers & stories', chip3:'Roots in Zaragoza',
+    projectsTitle:'Projects', projectsSub:'Everything we make lives here.',
+    live:'Live', hdpDesc:'Personal finance for Spain, told as stories: payslips, mortgages, taxes and compound interest, with real numbers. New video every Sunday.', visit:'Website →',
+    soonCover:'Coming soon', soonTitle:'Next project', soonDesc:'In the works. More slices on the way.',
+    aboutEyebrow:'About', aboutH1:"Hi, I'm Kiko.",
+    aboutIntro:"Industrial engineer from Zaragoza, living in Zurich. By day I work on the SAP systems that plan adidas' global product supply. On the side I build Tajada Studios, starting with Historias de Pasta.",
+    s1Title:'Where it starts', s1Body:'Zaragoza first, then Madrid for an M.Sc. in Industrial Engineering at the Universidad Politécnica. Maths, statistics and systems: a way of thinking I still use every day.',
+    s2Title:'What I do', s2Body:"From internships at Dematic and Biogen to adidas, where I was Chief of Staff for global product supply and logistics. Today I'm Senior Manager for Digital Process Management, bridging SAP planning tools and the people who use them.",
+    s3Title:'Why Tajada', s3Body:"Money is easier to understand as a story, with real numbers. That idea became Historias de Pasta. I'm also a CFA® Level III candidate and a marathon runner. Tajada Studios is where these projects live.",
+    contactTitle:"Let's make something.", contactBody:'Collaborations, press, or just hello.',
+    copy:'Copy', copied:'Copied', selected:'Selected, press Ctrl+C', footer:'Made with a slice of Aragón'
+  },
+  es: {
+    navStudio:'Estudio', navProjects:'Proyectos', navAbout:'Sobre mí', navContact:'Contacto',
+    eyebrow:'Estudio de medios · Raíces en Zaragoza', h1:'Historias con tajada.',
+    sub:'Tajada Studios es la casa de nuestros proyectos: canales, vídeos e historias en inglés y español.',
+    cta1:'Ver proyectos', cta2:'Quién está detrás',
+    studioTitle:'El estudio',
+    studioBody:'Una tajada es un buen trozo de algo bueno. Eso intentamos hacer: historias de las que merece la pena llevarse un trozo, con raíces en Zaragoza y Aragón.',
+    chip1:'Inglés y español', chip2:'Divulgación e historias', chip3:'Raíces en Zaragoza',
+    projectsTitle:'Proyectos', projectsSub:'Todo lo que hacemos vive aquí.',
+    live:'En marcha', hdpDesc:'Educación financiera para España, contada como historias: nóminas, hipotecas, Hacienda e interés compuesto, con números reales. Vídeo nuevo cada domingo.', visit:'Web →',
+    soonCover:'Próximamente', soonTitle:'Próximo proyecto', soonDesc:'En el horno. Vienen más tajadas.',
+    aboutEyebrow:'Sobre mí', aboutH1:'Hola, soy Kiko.',
+    aboutIntro:'Ingeniero industrial de Zaragoza, viviendo en Zúrich. De día trabajo en los sistemas SAP que planifican el suministro global de producto de adidas. En paralelo construyo Tajada Studios, empezando por Historias de Pasta.',
+    s1Title:'De dónde vengo', s1Body:'Primero Zaragoza, luego Madrid para el Máster en Ingeniería Industrial de la Politécnica. Matemáticas, estadística y sistemas: una forma de pensar que sigo usando cada día.',
+    s2Title:'A qué me dedico', s2Body:'De las prácticas en Dematic y Biogen a adidas, donde fui Chief of Staff de suministro global de producto y logística. Hoy soy Senior Manager de Digital Process Management, haciendo de puente entre las herramientas de planificación SAP y quienes las usan.',
+    s3Title:'Por qué Tajada', s3Body:'El dinero se entiende mejor como una historia, con números reales. Esa idea se convirtió en Historias de Pasta. Además soy candidato al nivel III del CFA® y corredor de maratones. Tajada Studios es donde viven estos proyectos.',
+    contactTitle:'Hagamos algo juntos.', contactBody:'Colaboraciones, prensa o simplemente hola.',
+    copy:'Copiar', copied:'Copiado', selected:'Seleccionado, pulsa Ctrl+C', footer:'Hecho con una tajada de Aragón'
+  }
+};
+let lang = 'en';
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el => { const v = T[l][el.dataset.i18n]; if (v != null) el.textContent = v; });
+  document.getElementById('btn-en').setAttribute('aria-pressed', l === 'en');
+  document.getElementById('btn-es').setAttribute('aria-pressed', l === 'es');
+  document.getElementById('copy-status').textContent = '';
+  try { localStorage.setItem('tajada-lang', l); } catch (e) {}
+}
+document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
+document.getElementById('btn-es').addEventListener('click', () => setLang('es'));
+
+const home = document.getElementById('home'), about = document.getElementById('about');
+function route(){
+  const h = location.hash.slice(1);
+  const isAbout = h === 'about';
+  home.hidden = isAbout; about.hidden = !isAbout;
+  document.querySelectorAll('[data-view-link]').forEach(a => isAbout ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+  if (isAbout || !h || h === 'top') { window.scrollTo(0, 0); return; }
+  const target = document.getElementById(h);
+  if (target) target.scrollIntoView();
+}
+window.addEventListener('hashchange', route);
+
+document.getElementById('copy-email').addEventListener('click', () => {
+  const el = document.getElementById('email'), status = document.getElementById('copy-status');
+  const selectIt = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); status.textContent = T[lang].selected; };
+  try {
+    navigator.clipboard.writeText(el.textContent.trim()).then(() => { status.textContent = T[lang].copied; }, selectIt);
+  } catch (e) { selectIt(); }
+});
+
+let start = 'en';
+try { const s = localStorage.getItem('tajada-lang'); if (s === 'en' || s === 'es') start = s; else if ((navigator.language || '').toLowerCase().startsWith('es')) start = 'es'; } catch (e) {}
+setLang(start);
+route();
+</script>
+
+</body>
+</html>
