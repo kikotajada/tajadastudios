@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tajada Studios</title>
-<meta name="description" content="Tajada Studios: media projects from Zaragoza, made in English and Spanish. Home of Historias de Pasta.">
+<meta name="description" content="Tajada Studios: channels and stories about money, the economy and everyday life. Based in Switzerland, with roots in Zaragoza, Spain. Home of Historias de Pasta.">
 <meta property="og:title" content="Tajada Studios">
 <meta property="og:description" content="Stories with a slice of home. Home of Historias de Pasta.">
 <meta property="og:image" content="https://tajadastudios.com/kiko.jpg">
@@ -83,13 +83,17 @@ nav a[aria-current="page"]{color:var(--red-text)}
 .head-row p{color:var(--muted)}
 .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:22px}
 .card{background:var(--surface); border:1.5px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column}
-.cover{aspect-ratio:16/10; max-width:100%; display:flex; align-items:flex-end; padding:18px; background:var(--cover); color:var(--muted); font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase}
-.cover.live{background:var(--red); color:#FFFFFF; font-family:var(--display); font-size:30px; font-weight:600; letter-spacing:-0.02em; text-transform:none; line-height:1.05}
+.cover{display:block; width:100%; max-width:100%; aspect-ratio:2/1; object-fit:cover; background:#F7F5F0; border-bottom:1.5px solid var(--line)}
+.cover-text{aspect-ratio:2/1; max-width:100%; display:flex; align-items:center; justify-content:center; gap:14px; background:#1C1917; color:#F4EFE6; font-family:var(--display); font-size:34px; font-weight:600; letter-spacing:-0.02em}
+.cover-text .cross{width:34px; height:34px; border-radius:4px; background:#C8102E; position:relative; flex:none}
+.cover-text .cross::before,.cover-text .cross::after{content:""; position:absolute; background:#FFFFFF; left:50%; top:50%; transform:translate(-50%,-50%)}
+.cover-text .cross::before{width:20px; height:6px} .cover-text .cross::after{width:6px; height:20px}
 .card .in{padding:20px 22px 24px; display:flex; flex-direction:column; gap:8px}
 .card h3{font-size:24px}
 .card p{font-size:15px; color:var(--muted)}
-.card.soon{background:transparent; border-style:dashed}
 .tag{align-self:flex-start; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 10px; border-radius:999px; background:var(--saffron); color:#1C1917}
+.tag.soon{background:transparent; color:var(--muted); border:1.5px solid var(--line)}
+.meta{font-size:13px; font-weight:600; color:var(--muted)}
 
 .contact{background:var(--band); color:var(--band-fg)}
 .contact .wrap{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:28px; padding-block:88px}
@@ -153,7 +157,6 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
       <b>Tajada</b><i>studios</i>
     </a>
     <nav aria-label="Main">
-      <a href="#studio" data-i18n="navStudio">Studio</a>
       <a href="#projects" data-i18n="navProjects">Projects</a>
       <a href="#about" data-i18n="navAbout" data-view-link="about">About</a>
       <a href="#contact" data-i18n="navContact">Contact</a>
@@ -169,9 +172,9 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
   <section class="hero" id="top">
     <div class="wrap">
       <div class="hero-text">
-        <span class="eyebrow" data-i18n="eyebrow">Media studio · Roots in Zaragoza</span>
+        <span class="eyebrow" data-i18n="eyebrow">Media studio · Switzerland &amp; Spain</span>
         <h1 data-i18n="h1">Stories with a slice of home.</h1>
-        <p data-i18n="sub">Tajada Studios is the home for our media projects: channels, videos and stories in English and Spanish.</p>
+        <p data-i18n="sub">Tajada Studios makes channels and stories about money, the economy and everyday life, in Spanish and English. Based in Switzerland, with roots in Zaragoza, Spain.</p>
         <div class="ctas">
           <a class="btn btn-red" href="#projects" data-i18n="cta1">See the projects</a>
           <a class="btn btn-line" href="#about" data-i18n="cta2">Who's behind it</a>
@@ -181,21 +184,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
     </div>
   </section>
 
-  <section class="white split" id="studio">
-    <div class="wrap">
-      <h2 data-i18n="studioTitle">The studio</h2>
-      <div class="body">
-        <p data-i18n="studioBody">A tajada is a slice, a generous piece of something good. That is what we try to make: stories worth taking a piece of, with roots in Zaragoza and Aragón.</p>
-        <ul class="chips">
-          <li data-i18n="chip1">English &amp; Spanish</li>
-          <li data-i18n="chip2">Explainers &amp; stories</li>
-          <li data-i18n="chip3">Roots in Zaragoza</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="projects" id="projects">
+  <section class="projects" id="projects" style="border-top:1.5px solid var(--line)">
     <div class="wrap">
       <div class="head-row">
         <h2 data-i18n="projectsTitle">Projects</h2>
@@ -203,31 +192,36 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
       </div>
       <div class="grid">
         <article class="card">
-          <div class="cover live">Historias de Pasta</div>
+          <img class="cover" src="hdp-cover.jpg" alt="Historias de Pasta banner: Dani holding a euro coin" width="960" height="480" loading="lazy">
           <div class="in">
             <span class="tag" data-i18n="live">Live</span>
             <h3>Historias de Pasta</h3>
+            <span class="meta" data-i18n="hdpMeta">Spain · In Spanish</span>
             <p data-i18n="hdpDesc">Personal finance for Spain, told as stories: payslips, mortgages, taxes and compound interest, with real numbers. New video every Sunday.</p>
             <ul class="links" aria-label="Historias de Pasta links">
-              <li><a href="https://historiasdepasta.es/" data-i18n="visit">Website →</a></li>
-              <li><a href="https://www.youtube.com/@historias_pasta">YouTube</a></li>
-              <li><a href="https://www.instagram.com/historias_pasta/">Instagram</a></li>
-              <li><a href="https://www.tiktok.com/@historias.pasta">TikTok</a></li>
+              <li><a href="https://historiasdepasta.es/" target="_blank" rel="noopener" data-i18n="visit">Website →</a></li>
+              <li><a href="https://www.youtube.com/@historias_pasta" target="_blank" rel="noopener">YouTube</a></li>
+              <li><a href="https://www.instagram.com/historias_pasta/" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://www.tiktok.com/@historias.pasta" target="_blank" rel="noopener">TikTok</a></li>
             </ul>
           </div>
         </article>
-        <article class="card soon">
-          <div class="cover" data-i18n="soonCover">Coming soon</div>
+        <article class="card">
+          <img class="cover" src="ms-cover.jpg" alt="Money Stories banner: Leo in a red jacket" width="960" height="480" loading="lazy">
           <div class="in">
-            <h3 data-i18n="soonTitle">Next project</h3>
-            <p data-i18n="soonDesc">In the works. More slices on the way.</p>
+            <span class="tag soon" data-i18n="soon">Coming soon</span>
+            <h3>Money Stories</h3>
+            <span class="meta" data-i18n="msMeta">Switzerland · In English</span>
+            <p data-i18n="msDesc">Money in Switzerland, explained with stories: pillar 3a, taxes, health insurance and rent. For expats and curious Swiss.</p>
           </div>
         </article>
-        <article class="card soon">
-          <div class="cover" data-i18n="soonCover">Coming soon</div>
+        <article class="card">
+          <div class="cover-text" role="img" aria-label="Desde Suiza"><span class="cross" aria-hidden="true"></span>Desde Suiza</div>
           <div class="in">
-            <h3 data-i18n="soonTitle">Next project</h3>
-            <p data-i18n="soonDesc">In the works. More slices on the way.</p>
+            <span class="tag soon" data-i18n="soon">Coming soon</span>
+            <h3>Desde Suiza</h3>
+            <span class="meta" data-i18n="dsMeta">Spain &amp; Switzerland · In Spanish</span>
+            <p data-i18n="dsDesc">Economy, politics and culture between Spain and Switzerland, and what Spain can learn from the Swiss.</p>
           </div>
         </article>
       </div>
@@ -242,13 +236,13 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
       <div class="hero-text">
         <span class="eyebrow" data-i18n="aboutEyebrow">About</span>
         <h1 data-i18n="aboutH1">Hi, I'm Kiko.</h1>
-        <p data-i18n="aboutIntro">Industrial engineer from Zaragoza, living in Zurich. By day I work on the SAP systems that plan adidas' global product supply. On the side I build Tajada Studios, starting with Historias de Pasta.</p>
+        <p data-i18n="aboutIntro">Industrial engineer from Zaragoza, based in Switzerland with my family. By day I work on the SAP systems that plan adidas' global product supply. On the side I build Tajada Studios, starting with Historias de Pasta.</p>
         <div class="route"><span>Zaragoza</span> 41.65° N <span aria-hidden="true">→</span> <span>Madrid</span> 40.42° N <span aria-hidden="true">→</span> <span>Zürich</span> 47.38° N</div>
         <ul class="links" aria-label="Kiko elsewhere">
-          <li><a href="https://kikotajada.com/">kikotajada.com</a></li>
-          <li><a href="https://www.linkedin.com/in/kikotajada/">LinkedIn</a></li>
-          <li><a href="https://x.com/kikotajada">X</a></li>
-          <li><a href="https://github.com/kikotajada">GitHub</a></li>
+          <li><a href="https://kikotajada.com/" target="_blank" rel="noopener">kikotajada.com</a></li>
+          <li><a href="https://www.linkedin.com/in/kikotajada/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://x.com/kikotajada" target="_blank" rel="noopener">X</a></li>
+          <li><a href="https://github.com/kikotajada" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </div>
     </div>
@@ -287,7 +281,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
 <footer>
   <div class="wrap">
     <span>© 2026 Tajada Studios</span>
-    <span data-i18n="footer">Made with a slice of Aragón</span>
+    <span data-i18n="footer">Based in Switzerland · Roots in Zaragoza, Spain</span>
   </div>
 </footer>
 <div class="strip" aria-hidden="true"></div>
@@ -296,41 +290,41 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10
 const T = {
   en: {
     navStudio:'Studio', navProjects:'Projects', navAbout:'About', navContact:'Contact',
-    eyebrow:'Media studio · Roots in Zaragoza', h1:'Stories with a slice of home.',
-    sub:'Tajada Studios is the home for our media projects: channels, videos and stories in English and Spanish.',
+    eyebrow:'Media studio · Switzerland & Spain', h1:'Stories with a slice of home.',
+    sub:'Tajada Studios makes channels and stories about money, the economy and everyday life, in Spanish and English. Based in Switzerland, with roots in Zaragoza, Spain.',
     cta1:'See the projects', cta2:"Who's behind it",
-    studioTitle:'The studio',
-    studioBody:'A tajada is a slice, a generous piece of something good. That is what we try to make: stories worth taking a piece of, with roots in Zaragoza and Aragón.',
-    chip1:'English & Spanish', chip2:'Explainers & stories', chip3:'Roots in Zaragoza',
     projectsTitle:'Projects', projectsSub:'Everything we make lives here.',
+    soon:'Coming soon', hdpMeta:'Spain · In Spanish', msMeta:'Switzerland · In English', dsMeta:'Spain & Switzerland · In Spanish',
+    msDesc:'Money in Switzerland, explained with stories: pillar 3a, taxes, health insurance and rent. For expats and curious Swiss.',
+    dsDesc:'Economy, politics and culture between Spain and Switzerland, and what Spain can learn from the Swiss.',
     live:'Live', hdpDesc:'Personal finance for Spain, told as stories: payslips, mortgages, taxes and compound interest, with real numbers. New video every Sunday.', visit:'Website →',
     soonCover:'Coming soon', soonTitle:'Next project', soonDesc:'In the works. More slices on the way.',
     aboutEyebrow:'About', aboutH1:"Hi, I'm Kiko.",
-    aboutIntro:"Industrial engineer from Zaragoza, living in Zurich. By day I work on the SAP systems that plan adidas' global product supply. On the side I build Tajada Studios, starting with Historias de Pasta.",
+    aboutIntro:"Industrial engineer from Zaragoza, based in Switzerland with my family. By day I work on the SAP systems that plan adidas' global product supply. On the side I build Tajada Studios, starting with Historias de Pasta.",
     s1Title:'Where it starts', s1Body:'Zaragoza first, then Madrid for an M.Sc. in Industrial Engineering at the Universidad Politécnica. Maths, statistics and systems: a way of thinking I still use every day.',
     s2Title:'What I do', s2Body:"From internships at Dematic and Biogen to adidas, where I was Chief of Staff for global product supply and logistics. Today I'm Senior Manager for Digital Process Management, bridging SAP planning tools and the people who use them.",
     s3Title:'Why Tajada', s3Body:"Money is easier to understand as a story, with real numbers. That idea became Historias de Pasta. I'm also a CFA® Level III candidate and a marathon runner. Tajada Studios is where these projects live.",
     contactTitle:"Let's make something.", contactBody:'Collaborations, press, or just hello.',
-    copy:'Copy', copied:'Copied', selected:'Selected, press Ctrl+C', footer:'Made with a slice of Aragón'
+    copy:'Copy', copied:'Copied', selected:'Selected, press Ctrl+C', footer:'Based in Switzerland · Roots in Zaragoza, Spain'
   },
   es: {
     navStudio:'Estudio', navProjects:'Proyectos', navAbout:'Sobre mí', navContact:'Contacto',
-    eyebrow:'Estudio de medios · Raíces en Zaragoza', h1:'Historias con tajada.',
-    sub:'Tajada Studios es la casa de nuestros proyectos: canales, vídeos e historias en inglés y español.',
+    eyebrow:'Estudio de medios · Suiza y España', h1:'Historias con tajada.',
+    sub:'Tajada Studios crea canales e historias sobre dinero, economía y vida cotidiana, en español e inglés. Desde Suiza, con raíces en Zaragoza, España.',
     cta1:'Ver proyectos', cta2:'Quién está detrás',
-    studioTitle:'El estudio',
-    studioBody:'Una tajada es un buen trozo de algo bueno. Eso intentamos hacer: historias de las que merece la pena llevarse un trozo, con raíces en Zaragoza y Aragón.',
-    chip1:'Inglés y español', chip2:'Divulgación e historias', chip3:'Raíces en Zaragoza',
     projectsTitle:'Proyectos', projectsSub:'Todo lo que hacemos vive aquí.',
+    soon:'Próximamente', hdpMeta:'España · En español', msMeta:'Suiza · En inglés', dsMeta:'España y Suiza · En español',
+    msDesc:'El dinero en Suiza, explicado con historias: pilar 3a, impuestos, seguro médico y alquiler. Para expats y suizos curiosos.',
+    dsDesc:'Economía, política y diferencias culturales entre España y Suiza, y lo que España puede aprender de los suizos.',
     live:'En marcha', hdpDesc:'Educación financiera para España, contada como historias: nóminas, hipotecas, Hacienda e interés compuesto, con números reales. Vídeo nuevo cada domingo.', visit:'Web →',
     soonCover:'Próximamente', soonTitle:'Próximo proyecto', soonDesc:'En el horno. Vienen más tajadas.',
     aboutEyebrow:'Sobre mí', aboutH1:'Hola, soy Kiko.',
-    aboutIntro:'Ingeniero industrial de Zaragoza, viviendo en Zúrich. De día trabajo en los sistemas SAP que planifican el suministro global de producto de adidas. En paralelo construyo Tajada Studios, empezando por Historias de Pasta.',
+    aboutIntro:'Ingeniero industrial de Zaragoza, afincado en Suiza con mi familia. De día trabajo en los sistemas SAP que planifican el suministro global de producto de adidas. En paralelo construyo Tajada Studios, empezando por Historias de Pasta.',
     s1Title:'De dónde vengo', s1Body:'Primero Zaragoza, luego Madrid para el Máster en Ingeniería Industrial de la Politécnica. Matemáticas, estadística y sistemas: una forma de pensar que sigo usando cada día.',
     s2Title:'A qué me dedico', s2Body:'De las prácticas en Dematic y Biogen a adidas, donde fui Chief of Staff de suministro global de producto y logística. Hoy soy Senior Manager de Digital Process Management, haciendo de puente entre las herramientas de planificación SAP y quienes las usan.',
     s3Title:'Por qué Tajada', s3Body:'El dinero se entiende mejor como una historia, con números reales. Esa idea se convirtió en Historias de Pasta. Además soy candidato al nivel III del CFA® y corredor de maratones. Tajada Studios es donde viven estos proyectos.',
     contactTitle:'Hagamos algo juntos.', contactBody:'Colaboraciones, prensa o simplemente hola.',
-    copy:'Copiar', copied:'Copiado', selected:'Seleccionado, pulsa Ctrl+C', footer:'Hecho con una tajada de Aragón'
+    copy:'Copiar', copied:'Copiado', selected:'Seleccionado, pulsa Ctrl+C', footer:'Desde Suiza · Raíces en Zaragoza, España'
   }
 };
 let lang = 'en';
