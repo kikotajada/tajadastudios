@@ -45,13 +45,11 @@ nav a[aria-current="page"]{text-decoration:underline; text-underline-offset:6px;
 .lang a[aria-current="true"]{background:var(--cream); color:var(--cocoa); text-decoration:none}
 
 /* hero */
-.hero .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:40px 56px; padding-block:48px 96px}
-.hero-text{flex:3 1 520px; min-width:0; display:flex; flex-direction:column; gap:26px}
+.hero .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:40px 56px; padding-block:64px 104px}
+.hero-text{flex:1 1 auto; max-width:900px; min-width:0; display:flex; flex-direction:column; gap:26px}
 .hero h1{font-size:clamp(46px, 8.2vw, 96px); line-height:.94; letter-spacing:-0.05em}
 .hl{background:var(--coral); color:var(--cocoa); border-radius:.2em; padding:0 .16em; -webkit-box-decoration-break:clone; box-decoration-break:clone}
 .hero p{font-size:clamp(18px, 2vw, 21px); color:var(--mint); max-width:36rem}
-.hero-art{flex:2 1 300px; display:flex; justify-content:center}
-.hero-art svg{width:min(100%, 380px); height:auto}
 .ctas{display:flex; flex-wrap:wrap; gap:12px}
 .btn{display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 28px; border-radius:999px; font-weight:600; font-size:17px; text-decoration:none; transition:transform .5s var(--ease), background .4s var(--ease)}
 .btn:active{transform:translateY(1px) scale(.98)}
@@ -134,6 +132,4 @@ footer a{color:#FFF6EA}
   nav{width:100%; justify-content:space-between}
   nav a{padding:10px 8px}
   .lang{margin-left:0}
-  .hero-art svg{width:200px}
-  .hero-art{justify-content:flex-start}
 }
