@@ -28,7 +28,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=7">
+<link rel="stylesheet" href="/css/site.css?v=8">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Tajada Studios", "url": "https://tajadastudios.com/", "description": "Vídeos explicativos y series animadas para fintechs, gestoras y bancos, del estudio detrás de Historias de Pasta. Desde Suiza, con raíces en Zaragoza.", "logo": "https://tajadastudios.com/apple-touch-icon.png", "email": "kiko@tajadastudios.com", "founder": {"@type": "Person", "name": "Kiko Tajada", "url": "https://kikotajada.com/"}, "sameAs": ["https://www.youtube.com/@historias_pasta", "https://x.com/kikotajada", "https://www.linkedin.com/in/kikotajada/"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de cuántos vídeos quieras al mes y de si diseñamos un reparto solo para ti. Te enviamos un presupuesto tras la primera llamada, y toda colaboración empieza con un único episodio piloto."}}, {"@type": "Question", "name": "¿Tenemos que escribir los guiones?", "acceptedAnswer": {"@type": "Answer", "text": "No. Nos cuentas tus productos y las preguntas que más te hacen tus clientes, y nosotros escribimos los guiones. Apruebas cada uno antes de animarlo."}}, {"@type": "Question", "name": "¿Cómo garantizáis que el contenido sea riguroso y cumpla la normativa?", "acceptedAnswer": {"@type": "Answer", "text": "Cada cifra sale de una fuente real y nunca prometemos rentabilidades. Los guiones los revisa un candidato a CFA® Level III, y tu equipo da el visto bueno antes de publicar nada."}}, {"@type": "Question", "name": "¿En qué idiomas trabajáis?", "acceptedAnswer": {"@type": "Answer", "text": "Español e inglés. Historias de Pasta es en español, y nuestros canales en inglés siguen el mismo proceso."}}, {"@type": "Question", "name": "¿Dónde se publican los vídeos?", "acceptedAnswer": {"@type": "Answer", "text": "Te entregamos los archivos listos para TikTok, Instagram, YouTube y tu web. Los publicas en tus propias cuentas."}}, {"@type": "Question", "name": "No somos una marca de finanzas. ¿Podéis ayudarnos?", "acceptedAnswer": {"@type": "Answer", "text": "Seguramente. El formato funciona para cualquier tema difícil de explicar. Cuéntanos qué tienes en mente."}}]}</script>
 </head>
@@ -53,7 +53,7 @@
       </div>
       <p class="risk">Empezamos con un episodio piloto, para que veas el formato antes de comprometerte con una serie.</p>
     </div>
-    <a class="hero-reel" href="https://www.tiktok.com/@historias.pasta/video/7696755332021816598" target="_blank" rel="noopener"><img src="/work/top-tiktok.webp" alt="TikTok de Historias de Pasta: la tele de 3.000 € que a Dani le costó 6.504 €" width="540" height="960" fetchpriority="high"><span class="badge"><b>214.000+</b> visualizaciones en TikTok</span><small>Ver nuestro mejor TikTok →</small></a>
+    <figure class="hero-dani"><video autoplay muted loop playsinline preload="metadata" poster="/work/dani-hero.webp" aria-label="Dani, el protagonista de Historias de Pasta, saludando"><source src="/work/dani-hero.mp4" type="video/mp4"></video><figcaption>Dani · protagonista de Historias de Pasta</figcaption></figure>
   </div>
 </section>
 
@@ -154,6 +154,7 @@
   </div>
 </footer>
 <script>
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.hero-dani video').forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
 document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('tajada-lang',a.dataset.lang)}catch(e){}})});
 var b=document.getElementById('copy-email');
 if(b){b.addEventListener('click',function(){var el=document.getElementById('email'),s=document.getElementById('copy-status');

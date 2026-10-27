@@ -28,7 +28,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=7">
+<link rel="stylesheet" href="/css/site.css?v=8">
 <script>
 (function(){try{var s=localStorage.getItem('tajada-lang');if(s==='es'){location.replace('/es/');return}if(s)return;
 var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';if(/^es/i.test(l)&&!/tajadastudios\.com/.test(document.referrer))location.replace('/es/')}catch(e){}})();
@@ -57,7 +57,7 @@ var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';if(/
       </div>
       <p class="risk">Start with one pilot episode, so you see the format before committing to a series.</p>
     </div>
-    <a class="hero-reel" href="https://www.tiktok.com/@historias.pasta/video/7696755332021816598" target="_blank" rel="noopener"><img src="/work/top-tiktok.webp" alt="Historias de Pasta TikTok: Dani's €3,000 TV that cost him €6,504" width="540" height="960" fetchpriority="high"><span class="badge"><b>214,000+</b> views on TikTok</span><small>Watch our best TikTok →</small></a>
+    <figure class="hero-dani"><video autoplay muted loop playsinline preload="metadata" poster="/work/dani-hero.webp" aria-label="Dani, the main character of Historias de Pasta, waving hello"><source src="/work/dani-hero.mp4" type="video/mp4"></video><figcaption>Dani · star of Historias de Pasta</figcaption></figure>
   </div>
 </section>
 
@@ -158,6 +158,7 @@ var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';if(/
   </div>
 </footer>
 <script>
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.hero-dani video').forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
 document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('tajada-lang',a.dataset.lang)}catch(e){}})});
 var b=document.getElementById('copy-email');
 if(b){b.addEventListener('click',function(){var el=document.getElementById('email'),s=document.getElementById('copy-status');
