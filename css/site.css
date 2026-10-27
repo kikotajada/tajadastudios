@@ -177,3 +177,23 @@ a.chan{transition:transform .7s var(--ease)} a.chan:hover{transform:translateY(-
   .lang{margin-left:0}
 }
 .star-stat{font-size:18px; font-weight:600; color:var(--mint)}
+/* top videos */
+.tops{display:grid; grid-template-columns:2fr 1fr 1fr; gap:16px; align-items:start}
+.topv{position:relative; display:block; border-radius:20px; overflow:hidden; background:var(--cream); text-decoration:none; transition:transform .7s var(--ease)}
+.topv:hover{transform:translateY(-4px)}
+.topv.wide img{width:100%; aspect-ratio:16/9; object-fit:cover}
+.topv.tall img{width:100%; aspect-ratio:9/16; object-fit:cover}
+.topv .badge{position:absolute; left:12px; top:12px; background:var(--cocoa); color:var(--cream); border-radius:999px; padding:6px 12px; font-size:14px; font-weight:600}
+.topv .badge b{color:var(--coral)}
+.topv small{position:absolute; left:12px; bottom:12px; background:rgba(255,246,234,.94); color:var(--cocoa); border-radius:999px; padding:4px 10px; font-size:13px; font-weight:600}
+@media (max-width: 820px){ .tops{grid-template-columns:1fr 1fr} .topv.wide{grid-column:1 / -1} }
+/* offers */
+.offer .tag{margin-bottom:4px}
+.offer.feature{background:var(--green); color:var(--cream)}
+.offer.feature p{color:var(--mint)}
+.offer.feature .tag{background:var(--coral); color:var(--cocoa)}
+.offer.optional{background:transparent; border:1.5px dashed var(--line)}
+.chan u{text-decoration-color:var(--coral); text-decoration-thickness:2px; text-underline-offset:3px}
+/* contact */
+.mail .send{font-size:16px; font-weight:600; min-height:48px; display:inline-flex; align-items:center; padding:0 22px; border-radius:999px; border:2px solid var(--cream); color:var(--cream); text-decoration:none}
+.mail .send:hover{background:rgba(255,246,234,.12)}
