@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found · Tajada Studios</title>
+<meta name="description" content="Page not found.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1F5C4A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css?v=2">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top on-green">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Tajada Studios, home"><svg width="46" height="26" viewBox="0 0 120 68" aria-hidden="true" focusable="false"><path d="M8 8 A52 52 0 0 0 112 8 Z" fill="#FFF6EA"/><path d="M17 8 A43 43 0 0 0 103 8 Z" fill="#F2664A"/></svg><span class="t">tajada <span class="s">studios</span></span></a>
+    <nav aria-label="Main"><a href="/#channels">Channels</a><a href="/about/">About</a><a href="/#contact">Contact</a><div class="lang" role="group" aria-label="Language / Idioma"><a href="/" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a><a href="/es/" hreflang="es" lang="es" data-lang="es">ES</a></div></nav>
+  </div>
+</header>
+<main id="main">
+<section class="lost on-green">
+  <div class="wrap">
+    <h1>This slice<br>got eaten.</h1>
+    <p>The page you were looking for isn't here. It may have moved.<br><span lang="es">La página que buscabas no está aquí. Puede que se haya movido.</span></p>
+    <div class="ctas">
+      <a class="btn btn-coral" href="/">Back to the studio</a>
+      <a class="btn btn-ghost" href="/es/" lang="es">Volver al estudio</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tajada Studios · Based in Switzerland · Roots in Zaragoza, Spain</span>
+    <a href="/legal/">Legal & privacy</a>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('tajada-lang',a.dataset.lang)}catch(e){}})});
+var b=document.getElementById('copy-email');
+if(b){b.addEventListener('click',function(){var el=document.getElementById('email'),s=document.getElementById('copy-status');
+function sel(){var r=document.createRange();r.selectNodeContents(el);var g=getSelection();g.removeAllRanges();g.addRange(r);s.textContent=b.dataset.selected}
+try{navigator.clipboard.writeText(el.textContent.trim()).then(function(){s.textContent=b.dataset.copied},sel)}catch(e){sel()}})}
+</script>
+</body>
+</html>
