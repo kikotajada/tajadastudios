@@ -176,3 +176,4 @@ a.chan{transition:transform .7s var(--ease)} a.chan:hover{transform:translateY(-
   nav a{padding:10px 8px}
   .lang{margin-left:0}
 }
+.star-stat{font-size:18px; font-weight:600; color:var(--mint)}
