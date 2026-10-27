@@ -124,6 +124,49 @@ footer a{color:#FFF6EA}
 .lost h1{font-size:clamp(48px, 9vw, 104px); letter-spacing:-0.05em; line-height:.94}
 .lost p{color:var(--mint); font-size:19px; max-width:34rem}
 
+/* brand homepage */
+.btn-dark{background:var(--cocoa); color:var(--cream)}
+.btn-dark:hover{background:#3A2C20}
+.stats{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px; margin-bottom:28px}
+.stat{background:var(--cream); border-radius:24px; padding:24px 26px; display:flex; flex-direction:column; gap:4px}
+.stat b{font-size:clamp(40px, 5vw, 56px); font-weight:800; letter-spacing:-0.04em; line-height:1; color:var(--green)}
+.stat span{color:var(--body-ink); font-size:16px}
+.work{display:flex; flex-wrap:wrap; gap:20px}
+.star{flex:1 1 300px; min-height:320px; background:var(--green); color:var(--cream); border-radius:24px; padding:32px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; text-decoration:none; transition:transform .7s var(--ease)}
+.star:hover{transform:translateY(-4px)}
+.star b{font-size:clamp(28px, 3.2vw, 40px); font-weight:800; letter-spacing:-0.035em; line-height:1.05; text-wrap:balance}
+.star .play{align-self:flex-start; background:var(--coral); color:var(--cocoa); border-radius:999px; padding:12px 22px; font-weight:600}
+.shorts{flex:2 1 460px; display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px}
+.short{position:relative; border-radius:20px; overflow:hidden; display:block; background:var(--cream); transition:transform .7s var(--ease)}
+.short:hover{transform:translateY(-4px)}
+.short img{width:100%; aspect-ratio:9/16; object-fit:cover}
+.short span{position:absolute; left:10px; bottom:10px; background:rgba(36,26,18,.82); color:var(--cream); border-radius:999px; padding:4px 10px; font-size:13px; font-weight:600}
+.formats{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; margin-top:16px; font-size:15px; font-weight:600; color:var(--muted)}
+.formats a{color:var(--cocoa); text-decoration:underline; text-decoration-color:var(--coral); text-decoration-thickness:2px; text-underline-offset:4px}
+.offers{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px}
+.offer{background:var(--white); border-radius:24px; padding:28px; display:flex; flex-direction:column; gap:10px}
+.offer h3{font-size:28px; letter-spacing:-0.03em}
+.offer p{color:var(--body-ink)}
+.trust{margin-top:24px; background:#F8E8DA; border-radius:20px; padding:18px 22px; font-weight:600; color:var(--cocoa)}
+.how{font-size:clamp(28px, 3.4vw, 36px); margin:56px 0 20px}
+.steps{list-style:none; counter-reset:s; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px}
+.steps li{counter-increment:s; display:flex; flex-direction:column; gap:8px; padding-top:18px; border-top:3px solid var(--green)}
+.steps li::before{content:counter(s); font-size:15px; font-weight:800; color:var(--green)}
+.steps b{font-size:24px; font-weight:800; letter-spacing:-0.03em}
+.steps p{color:var(--body-ink)}
+.other{margin-top:24px; color:var(--muted)}
+.learn{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px}
+.plan .in{padding:28px; gap:12px}
+.price{font-size:32px; font-weight:800; letter-spacing:-0.03em; color:var(--green)}
+.chans{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px}
+.chan{display:flex; align-items:center; gap:16px; background:var(--white); border-radius:20px; padding:14px; text-decoration:none}
+a.chan{transition:transform .7s var(--ease)} a.chan:hover{transform:translateY(-3px)}
+.chan img{width:72px; height:72px; border-radius:14px; object-fit:cover; flex:none}
+.chan span{display:flex; flex-direction:column; gap:2px}
+.chan b{font-size:20px; font-weight:800; letter-spacing:-0.02em}
+.chan small{font-size:14px; color:var(--muted); font-weight:600}
+@media (max-width: 560px){ .shorts{grid-template-columns:repeat(3, minmax(0, 1fr)); gap:8px} .short span{font-size:11px; left:6px; bottom:6px; padding:3px 7px} .star{min-height:240px} }
+
 @media (prefers-reduced-motion: reduce){ *{transition:none!important} }
 @media (max-width: 560px){
   .section{padding-block:64px}
