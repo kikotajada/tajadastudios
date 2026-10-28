@@ -237,7 +237,7 @@ a.chan{transition:transform .7s var(--ease)} a.chan:hover{transform:translateY(-
 /* hero: Dani */
 .hero-reel{display:none}
 .hero-dani{flex:0 0 340px; margin:0; display:flex; flex-direction:column; align-items:center; gap:4px}
-.hero-dani video{width:100%; aspect-ratio:600/802; object-fit:cover; background:var(--green)}
+.hero-dani img{width:100%; aspect-ratio:480/642; object-fit:cover; background:var(--green)}
 .hero-dani figcaption{font-size:14px; font-weight:600; color:var(--mint); background:rgba(255,246,234,.1); border-radius:999px; padding:6px 14px}
 @media (max-width: 820px){ .hero-dani{flex:0 0 auto; width:min(260px, 70vw); margin:-24px auto 0} }
-.hero-dani video{-webkit-mask-image:radial-gradient(ellipse 70% 75% at 50% 50%, #000 70%, transparent 100%); mask-image:radial-gradient(ellipse 70% 75% at 50% 50%, #000 70%, transparent 100%)}
+.hero-dani img{-webkit-mask-image:radial-gradient(ellipse 70% 75% at 50% 50%, #000 70%, transparent 100%); mask-image:radial-gradient(ellipse 70% 75% at 50% 50%, #000 70%, transparent 100%)}
